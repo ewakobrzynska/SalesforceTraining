@@ -1,0 +1,47 @@
+<template>
+    <lightning-card>
+        <lightning-tabset>
+            <lightning-tab label="Apex Classes">
+                <template if:true={apexClasses}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={apexClasses}
+                        columns={apexColumns}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </template>
+                <template if:false={apexClasses}>
+                    <p>No Apex Classes found</p>
+                </template>
+            </lightning-tab>
+
+            <lightning-tab label="Users">
+                <template if:true={users}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={users}
+                        columns={userColumns}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </template>
+                <template if:false={users}>
+                    <p>No Users found</p>
+                </template>
+            </lightning-tab>
+
+            <lightning-tab label="Licenses">
+                <template if:true={licenses}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={licenses}
+                        columns={licenseColumns}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </template>
+                <template if:false={licenses}>
+                    <p>No Licenses found</p>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

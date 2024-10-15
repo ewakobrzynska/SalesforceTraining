@@ -1,0 +1,247 @@
+<apex:page showHeader="false" standardStylesheets="false">
+
+<style>
+    :root{
+        --color-primary: #566e30;
+        --color-danger: #6a8d38;
+        --color-white: #fff;
+        --color-light: rgba(255,255,255,0.7);
+        --color-black: #000;
+        --color-bg: #3e4b31;
+        --color-bg1: #3a491f;
+        --color-bg2: #2b3416;
+
+        --color-primaryDark: #7e7e7e;
+        --color-dangerDark: #7c7c7c;
+        --color-whiteDark: #fff;
+        --color-lightDark: rgba(255,255,255,0.7);
+        --color-bgDark: #383737;
+        --color-bg1Dark: #373837;
+        --color-bg2Dark: #2b2c2b;
+
+        --container-width-lg:89%;
+        --container-width-md: 90%;
+        --container-width-sm: 94%;
+
+        --transition: all 400ms ease;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--color-bg1);
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 50px;
+    }
+
+    .contact-box {
+        display: flex;
+        width: auto;
+        height: 35rem;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 2rem rgb(0, 0, 0);
+    }
+
+    .left {
+        padding: 40px;
+        flex: 1;
+        width: 500px;
+    }
+
+    .right {
+        background-color: #F8EDDD;
+        color: var(--color-danger);
+        padding: 40px;
+        width: 20rem;
+        position: relative;
+    }
+
+    .right .info {
+        text-align: center;
+    }
+
+    .right .info div {
+        margin-bottom: 20px;
+    }
+
+    .right .info h2 {
+        font-size: 18px;
+    }
+
+    .right::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-danger);
+    }
+
+    .right::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-danger);
+    }
+
+    .contact-box h1 {
+        margin: 0;
+        font-size: 32px;
+        color: #333;
+    }
+
+    .contact-box p {
+        margin: 10px 0 20px;
+        color: #666;
+    }
+
+    @media (max-width: 768px) {
+        .contact-box {
+            flex-direction: column;
+        }
+
+        .left, .right {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            height: auto;
+
+            .contact-box {
+                margin: 20px;
+            }
+        }
+    }
+</style>
+<div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <div class="contact-box">
+        <div class="left">
+            <div class="thank-you-message">
+                <h1>Thank you for contacting us!</h1><br/>
+                <p>We will get back to you as soon as possible.</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="https://i.ibb.co/4jp4XsL/8-b-Cdwry-NNq8536g1.png" alt="logo" style="width: 200px; height:200px; margin: 0 auto; display: block; border: 0.3rem solid #fff; border-radius: 50%; padding: 0.5rem;"/>
+
+            <div class="info">
+                <h1 style="color: var(--color-bg); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em;"> ROGER FEDERER</h1>
+                <p style="color: var(--color-bg);"> AND TENNIS</p>
+                <div>
+                    <h2> example@example.com</h2>
+                    <h2> +12 345 678 910</h2>
+                    <h2> 12 Example St.</h2>
+                    <h2> 09:00 - 18:00</h2>
+                </div>
+            </div>
+            <div class="chatbot-container">
+                <style type='text/css'>
+                    .embeddedServiceHelpButton .helpButton .uiButton {
+                        background-color: var(--color-bg);
+                        font-family: "Arial", sans-serif;
+                    }
+
+                    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+                        outline: 1px solid var(--color-bg);
+                    }
+                </style>
+
+                <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+                <script type='text/javascript'>
+                    var initESW = function (gslbBaseURL) {
+                        embedded_svc.settings.displayHelpButton = true; //Or false
+                        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+                        embedded_svc.settings.defaultMinimizedText = 'Chat with a Bot';
+                        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+                        embedded_svc.init(
+                            'https://britenet-15f-dev-ed.develop.my.salesforce.com',
+                            'https://britenet-15f-dev-ed.develop.my.salesforce-sites.com/webtolead',
+                            gslbBaseURL,
+                            '00DWU000007vYzZ',
+                            'Chat_Team',
+                            {
+                                baseLiveAgentContentURL: 'https://c.la1-core1.sfdc-cehfhs.salesforceliveagent.com/content',
+                                deploymentId: '572WU000004znnt',
+                                buttonId: '573WU000001TxnJ',
+                                baseLiveAgentURL: 'https://d.la1-core1.sfdc-cehfhs.salesforceliveagent.com/chat',
+                                eswLiveAgentDevName: 'Chat_Team',
+                                isOfflineSupportEnabled: true
+                            }
+                        );
+                    };
+
+                    if (!window.embedded_svc) {
+                        var s = document.createElement('script');
+                        s.setAttribute('src', 'https://britenet-15f-dev-ed.develop.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                        s.onload = function () {
+                            initESW(null);
+                        };
+                        document.body.appendChild(s);
+                    } else {
+                        initESW('https://service.force.com');
+                    }
+
+                    const thankYouMessage = document.querySelector('.thank-you-message');
+                    thankYouMessage.style.opacity = 0;
+                    thankYouMessage.style.transform = 'translateX(-100%)';
+
+                    setTimeout(() => {
+                        thankYouMessage.style.transition = 'transform 2s ease-in-out, opacity 2s ease-in-out';
+                        thankYouMessage.style.transform = 'translateX(0)';
+                        thankYouMessage.style.opacity = 1;
+                    }, 500);
+
+                    const leftSection = document.querySelector('.left');
+                    leftSection.style.display = 'flex';
+                    leftSection.style.justifyContent = 'center';
+                    leftSection.style.alignItems = 'center';
+
+                    const chatbotContainer = document.querySelector('.chatbot-container');
+                    chatbotContainer.style.opacity = 0;
+                    setTimeout(() => {
+                        chatbotContainer.style.opacity = 1;
+                    }, 1000);
+
+
+                </script>
+            </div>
+            <script>
+                    const thankYouMessage = document.querySelector('.thank-you-message');
+                    thankYouMessage.style.opacity = 0;
+                    thankYouMessage.style.transform = 'translateX(-100%)';
+
+                    setTimeout(() => {
+                        thankYouMessage.style.transition = 'transform 2s ease-in-out, opacity 2s ease-in-out';
+                        thankYouMessage.style.transform = 'translateX(0)';
+                        thankYouMessage.style.opacity = 1;
+                    }, 500);
+
+                    const leftSection = document.querySelector('.left');
+                    leftSection.style.display = 'flex';
+                    leftSection.style.justifyContent = 'center';
+                    leftSection.style.alignItems = 'center';
+            </script>
+        </div>
+    </div>
+</div>
+
+</apex:page>

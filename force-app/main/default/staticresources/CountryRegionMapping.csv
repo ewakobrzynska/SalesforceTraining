@@ -1,0 +1,247 @@
+Country__c,Region__c
+United Arab Emirates,EMEA
+Afghanistan,EMEA
+Antigua and Barbuda,LATAM
+Anguilla,LATAM
+Albania,EMEA
+Armenia,EMEA
+Angola,EMEA
+Antarctica,EMEA
+Argentina,LATAM
+American Samoa,APAC
+Austria,EMEA
+Australia,APAC
+Aruba,LATAM
+Åland Islands,EMEA
+Azerbaijan,EMEA
+Bosnia and Herzegovina,EMEA
+Barbados,LATAM
+Bangladesh,APAC
+Belgium,EMEA
+Burkina Faso,EMEA
+Bulgaria,EMEA
+Bahrain,EMEA
+Burundi,EMEA
+Benin,EMEA
+Saint Barthélemy,EMEA
+Bermuda,LATAM
+Brunei Darussalam,APAC
+"Bolivia, Plurinational State of",LATAM
+Brazil,LATAM
+Bahamas,LATAM
+Bhutan,APAC
+Bouvet Island,EMEA
+Botswana,EMEA
+Belarus,EMEA
+Belize,LATAM
+Canada,NA
+Cocos (Keeling) Islands,APAC
+"Congo, the Democratic Republic of the",EMEA
+Central African Republic,EMEA
+Congo,EMEA
+Switzerland,EMEA
+Côte d'Ivoire,EMEA
+Cook Islands,EMEA
+Chile,LATAM
+Cameroon,EMEA
+China,APAC
+Colombia,LATAM
+Costa Rica,LATAM
+Cuba,LATAM
+Cabo Verde,EMEA
+Curaçao,EMEA
+Christmas Island,APAC
+Cyprus,EMEA
+Czechia,EMEA
+Germany,EMEA
+Djibouti,EMEA
+Denmark,EMEA
+Dominica,LATAM
+Dominican Republic,LATAM
+Algeria,EMEA
+Ecuador,LATAM
+Estonia,EMEA
+Egypt,EMEA
+Western Sahara,EMEA
+Eritrea,EMEA
+Spain,EMEA
+Ethiopia,EMEA
+Finland,EMEA
+Fiji,APAC
+Falkland Islands (Malvinas),LATAM
+"Micronesia, Federated States of",APAC
+Faroe Islands,EMEA
+France,EMEA
+Gabon,EMEA
+United Kingdom of Great Britain and Northern Ireland,EMEA
+Grenada,LATAM
+Georgia,EMEA
+French Guiana,EMEA
+Guernsey,EMEA
+Ghana,EMEA
+Gibralta,EMEA
+Greenland,EMEA
+Gambia,EMEA
+Guinea,EMEA
+Guadeloupe,EMEA
+Equatorial Guinea,EMEA
+Greece,EMEA
+South Georgia and the South Sandwich Islands,LATAM
+Guatemala,LATAM
+Guam,APAC
+Guinea-Bissau,EMEA
+Guyana,LATAM
+Hong Kong,APAC
+Heard Island and McDonald Islands,EMEA
+Honduras,LATAM
+Croatia,EMEA
+Haiti,LATAM
+Hungary,EMEA
+Indonesia,APAC
+Ireland,EMEA
+Israel,EMEA
+Isle of Man,EMEA
+India,APAC
+British Indian Ocean Territory,APAC
+Iraq,EMEA
+"Iran, Islamic Republic of",EMEA
+Iceland,EMEA
+Italy,EMEA
+Jersey,EMEA
+Jamaica,LATAM
+Jordan,EMEA
+Japan,APAC
+Kenya,EMEA
+Kyrgyzstan,EMEA
+Cambodia,APAC
+Kiribati,APAC
+Comoros,EMEA
+Saint Kitts and Nevis,LATAM
+"Korea, Democratic People's Republic of",APAC
+"Korea, Republic of",APAC
+Kuwait,EMEA
+Cayman Islands,LATAM
+Kazakhstan,EMEA
+Lao People's Democratic Republic,APAC
+Lebanon,EMEA
+Saint Lucia,LATAM
+Liechtenstein,EMEA
+Sri Lanka,APAC
+Liberia,EMEA
+Lesotho,EMEA
+Lithuania,EMEA
+Luxembourg,EMEA
+Latvia,EMEA
+Libya,EMEA
+Morocco,EMEA
+Monaco,EMEA
+"Moldova, Republic of",EMEA
+Montenegro,EMEA
+Collectivity of Saint Martin,EMEA
+Madagascar,EMEA
+Marshall Islands,APAC
+"Macedonia, the former Yugoslav Republic of",EMEA
+Mali,EMEA
+Myanmar,APAC
+Mongolia,APAC
+Macao,APAC
+Northern Mariana Islands,APAC
+Martinique,EMEA
+Mauritania,EMEA
+Montserrat,LATAM
+Malta,EMEA
+Mauritius,EMEA
+Maldives,APAC
+Malawi,EMEA
+Mexico,LATAM
+Malaysia,APAC
+Mozambique,EMEA
+Namibia,EMEA
+New Caledonia,EMEA
+Niger,EMEA
+Norfolk Island,APAC
+Nigeria,EMEA
+Nicaragua,LATAM
+Netherlands,EMEA
+Norway,EMEA
+Nepal,APAC
+Nauru,APAC
+Niue,APAC
+New Zealand,APAC
+Oman,EMEA
+Panama,LATAM
+Peru,LATAM
+French Polynesia,EMEA
+Papua New Guinea,APAC
+Philippines,APAC
+Pakistan,APAC
+Poland,EMEA
+Saint Pierre and Miquelon,EMEA
+Pitcairn,APAC
+Puerto Rico,LATAM
+"Palestine, State of",EMEA
+Portugal,EMEA
+Palau,APAC
+Paraguay,LATAM
+Qatar,EMEA
+Réunion,EMEA
+Romania,EMEA
+Serbia,EMEA
+Russian Federation,EMEA
+Rwanda,EMEA
+Saudi Arabia,EMEA
+Solomon Islands,APAC
+Seychelles,EMEA
+Sudan,EMEA
+Sweden,EMEA
+Singapore,APAC
+"Saint Helena, Ascension and Tristan da Cunha",EMEA
+Slovenia,EMEA
+Slovakia,EMEA
+Sierra Leone,EMEA
+San Marino,EMEA
+Senegal,EMEA
+Somalia,EMEA
+Suriname,LATAM
+South Sudan,EMEA
+Sao Tome and Principe,EMEA
+El Salvador,LATAM
+Sint Maarten,EMEA
+Syrian Arab Republic,EMEA
+Swaziland,EMEA
+Turks and Caicos Islands,LATAM
+Chad,EMEA
+French Southern Territories,EMEA
+Togo,EMEA
+Thailand,APAC
+Tajikistan,EMEA
+Tokelau,APAC
+Timor-Leste,APAC
+Turkmenistan,EMEA
+Tunisia,EMEA
+Tonga,APAC
+Turkey,EMEA
+Trinidad and Tobago,LATAM
+Tuvalu,APAC
+"Taiwan, Province of China",APAC
+"Tanzania, United Republic of",EMEA
+Ukraine,EMEA
+Uganda,EMEA
+United States Minor Outlying Islands,APAC
+United States of America,NA
+Uruguay,LATAM
+Uzbekistan,EMEA
+Holy See,EMEA
+Saint Vincent and the Grenadines,LATAM
+"Venezuela, Bolivarian Republic of",LATAM
+"Virgin Islands, British",LATAM
+"Virgin Islands, U.S.",LATAM
+Vietnam,APAC
+Vanuatu,APAC
+Wallis and Futuna,EMEA
+Samoa,APAC
+Yemen,EMEA
+Mayotte,EMEA
+South Africa,EMEA
+Zambia,EMEA
+Zimbabwe,EMEA

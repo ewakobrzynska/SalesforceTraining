@@ -1,0 +1,104 @@
+<apex:page standardController="Order" extensions="SignatureController" standardStylesheets="false">
+    <style>
+    .custom-button {
+        margin: 0 10px;
+        border: none; 
+        border-radius: 5px; 
+        background-color: #4094F9; 
+        color: #ffffff; 
+        border-color: #4094F9;
+        width: 75px; 
+        height: 35px; 
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .custom-button:hover {
+        background-color: #004486;
+    }
+    </style>
+    <apex:form style="text-align: center; margin: 10px auto; ">
+        <apex:outputText style="margin-bottom:20px; font-size: 16px;" value="You are about to sign the Order Details for Order Number: {!Order.OrderNumber}."/>
+        <br/>
+        <apex:outputText style="margin-bottom:20px;" value="Please sign below to confirm that you agree to the terms and conditions associated with this order."/>
+        <br/>
+        <apex:outputText style="margin-bottom:20px;" value="Once signed, your signature will be saved as part of the order record."/>
+        <div>
+            <canvas id="signatureCanvas" width="500" height="160" style="border: 1px solid #ccc; color: white; margin-bottom: 30px; margin-top: 30px"></canvas>
+        </div>
+        <apex:commandButton value="Save" onclick="saveSignature();" styleClass="custom-button" />
+        <apex:commandButton value="Clear" onclick="clearSignature();" styleClass="custom-button" />
+    </apex:form>
+
+    <script>
+        var canvas = document.getElementById("signatureCanvas");
+        var context = canvas.getContext("2d");
+        var drawing = false;
+
+        function startDrawing(event) {
+            drawing = true;
+            context.beginPath();
+            context.moveTo(getX(event), getY(event));
+        }
+
+        function draw(event) {
+            if (drawing) {
+                context.lineTo(getX(event), getY(event));
+                context.stroke();
+            }
+        }
+
+        function stopDrawing() {
+            drawing = false;
+            context.closePath();
+        }
+        
+        function clearSignature() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function getX(event) {
+            return event.clientX - canvas.offsetLeft;
+        }
+
+        function getY(event) {
+            return event.clientY - canvas.offsetTop;
+        }
+
+        canvas.addEventListener("mousedown", startDrawing);
+        canvas.addEventListener("mousemove", draw);
+        canvas.addEventListener("mouseup", stopDrawing);
+        canvas.addEventListener("mouseleave", stopDrawing);
+        
+        canvas.addEventListener('touchstart', function(e) {
+            e.preventDefault(); 
+            startDrawing(e.touches[0]);
+        });
+
+        canvas.addEventListener('touchmove', function(e) {
+            e.preventDefault(); 
+            draw(e.touches[0]);
+        });
+
+        canvas.addEventListener('touchend', stopDrawing);
+
+        function saveSignature() {
+            var dataURL = canvas.toDataURL("image/png"); 
+            var orderId = '{!Order.Id}'; 
+
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SignatureController.saveSignatureToOrder}',
+                orderId,
+                dataURL,
+                function(result, event) {
+                    if (event.status) {
+                        document.getElementById('{!$Component.messagePanel}').style.display = 'block';
+                        document.getElementById('{!$Component.message}').innerText = 'Signature Saved!';
+                    } else {
+                        document.getElementById('{!$Component.messagePanel}').style.display = 'block';
+                        document.getElementById('{!$Component.message}').innerText = 'Saved Error';
+                    }
+                }
+            );
+        }
+    </script>
+</apex:page>

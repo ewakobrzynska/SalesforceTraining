@@ -1,0 +1,199 @@
+<apex:page showHeader="false" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.WebToLeadZip, 'webToLead.css')}"/>
+     <style>   .contact-box input, .contact-box textarea {
+        width: calc(87%);
+    }</style>
+    <div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <div class="contact-box">
+        <div class="left">
+            <h1>{!$Label.Header_Text}</h1>
+            <p>{!$Label.Subheader_Text}</p>
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DWU000007vYzZ" method="POST">
+                <input type="hidden" name="oid" value="00DWU000007vYzZ"/>
+                <input type="hidden" name="retURL" value="https://britenet-15f-dev-ed--c.develop.vf.force.com/apex/ThankYouPage"/>       
+                <div class="flex-inputs">
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name *"/>
+                    <input type="text" id="last_name" name="last_name" placeholder="Last Name *"/>
+                </div>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number *"/>
+                <input type="email" id="email" name="email" placeholder="Email Address *"/>
+                <input type="text" id="company" name="company" placeholder="Company Name"/>
+                <input type="submit" name="submit" value="SUBMIT"/>
+            </form>
+        </div>
+        <div class="right">
+            <img src="https://i.ibb.co/JR41yj3/Projekt-bez-nazwy-4.png" alt="Logo"/>
+            <div class="info">
+                <h1> {!$Label.Globetrotter_Header}</h1>
+                <p> {!$Label.Globetrotter_Subheader}</p>
+                <div style="margin-bottom: 0;"><i class="fas fa-envelope" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Email_Address}</h2></div>
+                <div style="margin-bottom: 0;"><i class="fas fa-phone" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Phone_Number}</h2></div>
+                <div style="margin-bottom: 0;"><i class="fas fa-map-marker-alt" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Address}</h2></div>
+                <div style="margin-bottom: 0;"><i class="fas fa-clock" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Office_Hours}</h2></div>
+            </div>
+            <div class="chatbot-container" standardStylesheets="false">
+<style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #056663;
+        font-family: "Arial", sans-serif;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #056663;
+    }
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+        embedded_svc.init(
+            'https://britenet-15f-dev-ed.develop.my.salesforce.com',
+            'https://britenet-15f-dev-ed.develop.my.salesforce-sites.com/webtolead',
+            gslbBaseURL,
+            '00DWU000007vYzZ',
+            'Bot_Team',
+            {
+                baseLiveAgentContentURL: 'https://c.la11-core1.sfdc-cehfhs.salesforceliveagent.com/content',
+                deploymentId: '572WU000004znnt',
+                buttonId: '573WU000001jaWb',
+                baseLiveAgentURL: 'https://d.la11-core1.sfdc-cehfhs.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'Bot_Team',
+                isOfflineSupportEnabled: true
+            }
+        );
+    };
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://britenet-15f-dev-ed.develop.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+</script>
+            </div>
+            </div>
+                <script>
+                    document.querySelector('input[type="submit"]').addEventListener('click', function (event) {
+                        const firstNameInput = document.getElementById('first_name');
+                        const lastNameInput = document.getElementById('last_name');
+                        const phoneInput = document.getElementById('phone');
+                        const emailInput = document.getElementById('email');
+                    
+                        let isValid = true;
+                        let missingFields = [];
+                        let errorMessages = [];
+                    
+                        if (firstNameInput.value.trim() === '') {
+                            firstNameInput.style.border = '1px solid red';
+                            isValid = false;
+                            missingFields.push('First Name');
+                        } else if (firstNameInput.value.trim().length > 40) {
+                            firstNameInput.style.border = '1px solid red';
+                            isValid = false;
+                            errorMessages.push('First Name must not exceed 40 characters.');
+                        } else if (!/^[a-zA-Z]+$/.test(firstNameInput.value.trim())) {
+                            firstNameInput.style.border = '1px solid red';
+                            isValid = false;
+                            errorMessages.push('First Name must contain only letters.');
+                        } else {
+                            firstNameInput.style.border = '';
+                        }
+                    
+                        if (lastNameInput.value.trim() === '') {
+                            lastNameInput.style.border = '1px solid red';
+                            isValid = false;
+                            missingFields.push('Last Name');
+                        } else if (lastNameInput.value.trim().length > 40) {
+                            lastNameInput.style.border = '1px solid red';
+                            isValid = false;
+                            errorMessages.push('Last Name must not exceed 40 characters.');
+                        } else if (!/^[a-zA-Z]+$/.test(lastNameInput.value.trim())) {
+                            lastNameInput.style.border = '1px solid red';
+                            isValid = false;
+                            errorMessages.push('Last Name must contain only letters.');
+                        } else {
+                            lastNameInput.style.border = '';
+                        }
+                    
+                        if (phoneInput.value.trim() === '') {
+                            phoneInput.style.border = '1px solid red';
+                            isValid = false;
+                            missingFields.push('Phone Number');
+                        } else if (!/^(\+)[0-9]+$/.test(phoneInput.value.trim())) {
+                            phoneInput.style.border = '1px solid red';
+                            isValid = false;
+                            errorMessages.push('Phone Number must start with +xx and contain only digits.');
+                        } else {
+                            phoneInput.style.border = '';
+                        }
+                    
+                        if (emailInput.value.trim() === '') {
+                            emailInput.style.border = '1px solid red';
+                            isValid = false;
+                            missingFields.push('Email Address');
+                        } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim())) {
+                            emailInput.style.border = '1px solid red';
+                            isValid = false;
+                            errorMessages.push('Email Address is incorrect. Please check it.');
+                        } else {
+                            emailInput.style.border = '';
+                        }
+                    
+                        if (!isValid) {
+                            event.preventDefault();
+                            const dialogBox = document.createElement('div');
+                            dialogBox.style.position = 'fixed';
+                            dialogBox.style.top = '50%';
+                            dialogBox.style.left = '50%';
+                            dialogBox.style.transform = 'translate(-50%, -50%)';
+                            dialogBox.style.background = 'white';
+                            dialogBox.style.padding = '20px';
+                            dialogBox.style.border = '1px solid black';
+                            dialogBox.style.borderRadius = '10px';
+                            dialogBox.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+                            let message = `Please fill in the following fields: <br>${missingFields.join(', ')}.`;
+                            if (errorMessages.length > 0) {
+                                message += `<br>Errors: <br>${errorMessages.join('<br>')}`;
+                            }
+                            dialogBox.innerHTML = message;
+                            document.body.appendChild(dialogBox);
+                            setTimeout(() => {
+                                dialogBox.remove();
+                            }, 3000);
+                        } else {
+                            document.querySelector('form').submit();
+                        }
+                    });
+            </script>
+        </div>
+    </div>
+</apex:page>

@@ -1,0 +1,193 @@
+<apex:page contentType="application/pdf" standardController="Order" applyHtmlTag="false" showHeader="false" standardStylesheets="false" >
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 0;
+                background-color: white;
+                margin: 0;
+            }
+
+            .container {
+                padding: 20px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+
+            .logo {
+                max-width: 150px;
+                height: auto;
+                margin-right: 20px;
+            }
+
+            .contact-info {
+                text-align: left;
+                font-size: 0.6em;
+            }
+
+            .order-date {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 0.9em;
+            }
+
+            .order-details {
+                padding: 15px;
+                margin-top: 20px;
+                flex-grow: 1;
+            }
+
+            .order-details p {
+                margin: 10px 0;
+            }
+
+            .product-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .product-table th, .product-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            .product-table th {
+                background-color: #f2f2f2;
+                text-align: left;
+            }
+
+            h1 {
+                text-align: center;
+                margin: 0;
+            }
+
+            .total-signature {
+                display: flex;
+                justify-content: flex-end; 
+                align-items: flex-start;
+                margin-bottom: 50px;
+                font-size: 0.9em;
+            }
+
+            .signature-block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                text-align: right;
+            }
+
+            .footer {
+                font-size: 0.7em;
+                color: #666;
+                padding: 10px;
+                border-top: 1px solid #ccc;
+                margin-top: auto;
+                position: relative;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <img src="{!URLFOR($Resource.LogoImage)}" alt="Company Logo" class="logo"/>
+                <div class="contact-info">
+                    <strong>GLOBETROTTER TRAVEL AGENCY</strong><br />
+                    1 Market St, San Francisco, CA 94105, United States<br />
+                    Phone: (123) 456-7890<br />
+                    Fax: (123) 456-7899<br />
+                    Email: info@globetrotter.com
+                </div>
+                <div class="order-date">
+                    <p><strong>Order Date:</strong> 
+                        <apex:outputText value="{0, date, dd.MM.yyyy}">
+                            <apex:param value="{!Order.EffectiveDate}" />
+                        </apex:outputText>
+                    </p>
+                </div>
+            </div>
+
+            <h1>Order Details</h1>
+
+            <div class="order-details">
+                <p style="margin-bottom: 50px; font-size: 0.9em;">This is a payment receipt for the services provided by Globetrotter Travel Agency. Please find the details of your order below.</p>
+                <p><strong>Customer Name:</strong> {!Order.Account.Name}</p>                
+                <p><strong>Order Number:</strong> {!Order.OrderNumber}</p>
+                <p><strong>Status:</strong> Activated</p>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!Order.OrderItems}" var="item">
+                            <tr>
+                                <td>{!item.Product2.Name}</td>
+                                <td>{!item.Quantity}</td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,###,##0.00}">
+                                        <apex:param value="{!item.UnitPrice}" />
+                                    </apex:outputText>
+                                </td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,###,##0.00}">
+                                        <apex:param value="{!item.TotalPrice}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+
+                <div class="total-signature">
+                    <div>
+                        <p><strong>Total Amount:</strong> 
+                            <apex:outputText value="{0, number, currency}">
+                                <apex:param value="{!Order.TotalAmount}" />
+                            </apex:outputText>
+                        </p>
+                    </div>
+                    <div class="signature-block">
+                        <p><strong>Your Signature:</strong></p>
+                        <div style="margin-left: 250px;">
+                        <apex:outputField value="{!Order.Signature__c}"/></div>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9em; margin-top: 50px;">
+                    Thank you for choosing Globetrotter Travel Agency. We appreciate your business and look forward to serving you again in the future.
+                </p>
+            </div>
+
+            <div class="footer">
+                <p>
+                    Please note that all sales are final and non-refundable. By making a payment, you acknowledge that you have read and agreed to our terms and conditions.
+                </p>
+                <h2>Terms and Conditions</h2>
+                <p>The following terms and conditions apply to all orders placed with Globetrotter Travel Agency:</p>
+                <ul>
+                    <li>Payment is due in full at the time of booking.</li>
+                    <li>All sales are final and non-refundable.</li>
+                    <li>Travel dates and itineraries are subject to change without notice.</li>
+                    <li>Globetrotter Travel Agency is not responsible for any losses or damages incurred during travel.</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</apex:page>

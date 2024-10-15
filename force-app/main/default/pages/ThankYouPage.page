@@ -1,0 +1,111 @@
+<apex:page showHeader="false" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.StyleZip, 'thankYouPage.css')}"/>
+<div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <div class="contact-box">
+        <div class="left">
+            <div class="thank-you-message">
+                <h1>{!$Label.Thank_You_Message_Header}</h1><br/>
+                <p>{!$Label.Thank_You_Message_Text}</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="https://i.ibb.co/JR41yj3/Projekt-bez-nazwy-4.png" alt="Logo"
+                 style="width: 200px; height:200px; margin: 0 auto; display: block; border: 0.3rem solid #fff; border-radius: 50%; padding: 0.5rem;"/>
+            <div class="info">
+                <h1 style="color: #036562; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em;"> {!$Label.Globetrotter_Header}</h1>
+                <p style="color: #036562;"> {!$Label.Globetrotter_Subheader}</p>
+                <div style="margin-bottom: 0;">
+                    <i class="fas fa-envelope" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Email_Address}</h2></div>
+                <div style="margin-bottom: 0;">
+                    <i class="fas fa-phone" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Phone_Number}</h2></div>
+                <div style="margin-bottom: 0;">
+                    <i class="fas fa-map-marker-alt" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Address}</h2></div>
+                <div style="margin-bottom: 0;">
+                    <i class="fas fa-clock" style="vertical-align: middle;"></i>
+                    <h2 style="display: inline-block; vertical-align: middle;"> {!$Label.Office_Hours}</h2></div>
+            </div>
+            <div class="chatbot-container">
+                <style type='text/css'>
+                    .embeddedServiceHelpButton .helpButton .uiButton {
+                        background-color: #056663;
+                        font-family: "Arial", sans-serif;
+                    }
+
+                    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+                        outline: 1px solid #056663;
+                    }
+                </style>
+
+                <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+                <script type='text/javascript'>
+                    var initESW = function (gslbBaseURL) {
+                        embedded_svc.settings.displayHelpButton = true; //Or false
+                        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+                        embedded_svc.settings.defaultMinimizedText = '.';
+                        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+                        embedded_svc.init(
+                            'https://britenet-15f-dev-ed.develop.my.salesforce.com',
+                            'https://britenet-15f-dev-ed.develop.my.salesforce-sites.com/webtolead',
+                            gslbBaseURL,
+                            '00DWU000007vYzZ',
+                            'Chat_Team',
+                            {
+                                baseLiveAgentContentURL: 'https://c.la1-core1.sfdc-cehfhs.salesforceliveagent.com/content',
+                                deploymentId: '572WU000004znnt',
+                                buttonId: '573WU000001TxnJ',
+                                baseLiveAgentURL: 'https://d.la1-core1.sfdc-cehfhs.salesforceliveagent.com/chat',
+                                eswLiveAgentDevName: 'Chat_Team',
+                                isOfflineSupportEnabled: true
+                            }
+                        );
+                    };
+
+                    if (!window.embedded_svc) {
+                        var s = document.createElement('script');
+                        s.setAttribute('src', 'https://britenet-15f-dev-ed.develop.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                        s.onload = function () {
+                            initESW(null);
+                        };
+                        document.body.appendChild(s);
+                    } else {
+                        initESW('https://service.force.com');
+                    }
+
+                    const chatbotContainer = document.querySelector('.chatbot-container');
+                    chatbotContainer.style.opacity = 0;
+                    setTimeout(() => {
+                        chatbotContainer.style.opacity = 1;
+                    }, 1000);
+
+                </script>
+            </div>
+            <script>
+                    const thankYouMessage = document.querySelector('.thank-you-message');
+                    thankYouMessage.style.opacity = 0;
+                    thankYouMessage.style.transform = 'translateX(-100%)';
+
+                    setTimeout(() => {
+                        thankYouMessage.style.transition = 'transform 2s ease-in-out, opacity 2s ease-in-out';
+                        thankYouMessage.style.transform = 'translateX(0)';
+                        thankYouMessage.style.opacity = 1;
+                    }, 500);
+
+                    const leftSection = document.querySelector('.left');
+                    leftSection.style.display = 'flex';
+                    leftSection.style.justifyContent = 'center';
+                    leftSection.style.alignItems = 'center';
+            </script>
+        </div>
+    </div>
+</div>
+
+
+</apex:page>
