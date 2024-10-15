@@ -18,23 +18,14 @@ jobs:
       with:
         node-version: '16' 
 
-    - name: Install Salesforce CLI
-      run: |
-        # Instalacja SFDX CLI
-        npm install sfdx-cli --global
+    - name: Install SF CLI
+      uses: svierk/sfdx-cli-setup@main
 
-    - name: Verify Salesforce CLI Installation
-      run: |
-        sfdx --version
-        sf --version
-
-    - name: Generate authFile.json
-      run: |
-        sf org display --target-org DevOrg --verbose --json > authFile.json
-
-    - name: Authenticate with Salesforce
-      run: |
-        sfdx auth:sfdxurl:store --sfdxurlfile authFile.json --setdefaultusername
+    - name: Salesforce Org Login via SFDX Auth URL
+      uses: svierk/sfdx-login@main
+      with:
+        sfdx-url: ${{ secrets.SFDX_AUTH_URL }}
+        alias: my-org
 
     - name: Validate Build
       run: |
