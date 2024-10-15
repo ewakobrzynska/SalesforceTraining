@@ -18,10 +18,11 @@ jobs:
           npm install
           npm install sfdx-cli --global
           
-    - name: Install Salesforce CLI (sf)
+    - name: Install Salesforce CLI
       run: |
-        curl -sSL https://developer.salesforce.com/media/salesforce-cli/sfdx-cli/install.sh | bash
-
+        npm install sfdx-cli
+        node_modules/sfdx-cli/bin/run --version
+        node_modules/sfdx-cli/bin/run plugins --core
 
     - name: Generate authFile.json
       run: |
