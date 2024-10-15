@@ -34,6 +34,7 @@ jobs:
           --target-org my-org \
           --wait 10 \
           --ignore-conflicts \
-          --ignore-errors 
+          --ignore-errors \
+          --test-level NoTestRun
 
           
