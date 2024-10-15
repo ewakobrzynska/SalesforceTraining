@@ -32,9 +32,9 @@ jobs:
         sfdx project deploy start \
           --manifest package.xml \
           --target-org my-org \
-          --wait 10 \
-          --ignore-conflicts \
-          --ignore-errors \
-          --test-level NoTestRun
+          --wait 10
+
+    - name: Clean Up
+      run: rm -rf test-results || true
 
           
