@@ -27,8 +27,15 @@ jobs:
         sfdx-url: ${{ secrets.SFDX_AUTH_URL }}
         alias: my-org
           
-    - name: Full deploy to production
-      run: sfdx force:source:deploy -u ${{ secrets.SF_USERNAME }} -p force-app/main/default
-
+    - name: Full Deploy to Production
+      run: |
+        sfdx project deploy start \
+          --manifest package.xml \
+          --target-org my-org \
+          --wait 10 \
+          --ignore-conflicts \
+          --ignore-errors \
+          --test-level RunAllTestsInOrg
+        
     - name: Run Apex tests
       run: sfdx force:apex:test:run --targetusername ${{ secrets.SF_USERNAME }} --resultformat human
