@@ -13,24 +13,19 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install npm and SFDX CLI
-      run: |
-          npm install
-          npm install sfdx-cli --global
-          
-    - name: Install Salesforce CLI
-      run: |
-        npm install sfdx-cli
-        node_modules/sfdx-cli/bin/run --version
-        node_modules/sfdx-cli/bin/run plugins --core
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18' 
 
-    - name: Generate authFile.json
-      run: |
-        sf org display --target-org DevOrg --verbose --json > authFile.json
+    - name: Install SF CLI
+      uses: svierk/sfdx-cli-setup@main
 
-    - name: Authenticate with Salesforce
-      run: |
-        sfdx auth:sfdxurl:store --sfdxurlfile authFile.json --setdefaultusername
+    - name: Salesforce Org Login via SFDX Auth URL
+      uses: svierk/sfdx-login@main
+      with:
+        sfdx-url: ${{ secrets.SFDX_AUTH_URL }}
+        alias: my-org
 
     - name: Validate Build
       run: |
