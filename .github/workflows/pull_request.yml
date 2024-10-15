@@ -19,14 +19,26 @@ jobs:
           npm install sfdx-cli --global
       
     - name: Authenticate with Salesforce
-      run: sfdx auth:jwt:grant --clientid ${{ secrets.CLIENT_ID }} --jwtkeyfile assets/server.key --username ${{ secrets.SF_USERNAME }} --instanceurl https://login.salesforce.com
-
+      run: |
+        sfdx force:auth:jwt:grant \
+          --clientid ${{ secrets.CLIENT_ID }} \
+          --jwtkeyfile assets/server.key \
+          --username ${{ secrets.SF_USERNAME }} \
+          --instanceurl https://login.salesforce.com
+          
     - name: Validate Build
-      run: sfdx force:source:deploy --checkonly --targetusername ${{ secrets.SF_USERNAME }} --wait 10
+      run: |
+          sfdx force:source:deploy --checkonly \
+          --targetusername ${{ secrets.SF_USERNAME }} \
+          --wait 10
       continue-on-error: true
 
     - name: Run Apex Tests
-      run: sfdx force:apex:test:run --targetusername ${{ secrets.SF_USERNAME }} --wait 10 --resultformat human
+      run: |
+        sfdx force:apex:test:run \
+          --targetusername ${{ secrets.SF_USERNAME }} \
+          --wait 10 \
+          --resultformat human
       continue-on-error: true
         
     - name: Set Build Flag on Failure
