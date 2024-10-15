@@ -34,10 +34,7 @@ jobs:
 
     - name: Run Apex Tests
       run: |
-        sfdx force:apex:test:run \
-          --targetusername ${{ secrets.SF_USERNAME }} \
-          --wait 10 \
-          --resultformat human
+        sfdx force:apex:test:run --target-org my-org --result-format human
       continue-on-error: true
         
     - name: Set Build Flag on Failure
