@@ -34,7 +34,7 @@ jobs:
 
     - name: Run Apex Tests
       run: |
-        sfdx force:apex:test:run --target-org my-org --result-format human
+        sfdx force:apex:test:run --target-org my-org --result-format human --synchronous
       continue-on-error: true
         
     - name: Set Build Flag on Failure
