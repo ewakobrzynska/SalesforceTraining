@@ -16,4 +16,6 @@ jobs:
     - name: Authenticate with Salesforce
       run: sfdx auth:jwt:grant --clientid ${{ secrets.CLIENT_ID }} --jwtkeyfile assets/server.key --username ${{ secrets.SF_USERNAME }} --instanceurl https://login.salesforce.com
 
-   
+    - name: Set Build Flag on Failure
+      if: ${{ failure() }}
+      run: echo "Validation failed, setting flag"
