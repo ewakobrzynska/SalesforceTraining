@@ -29,10 +29,8 @@ jobs:
 
     - name: Validate Build
       run: |
-          sfdx force:source:deploy --checkonly \
-          --targetusername ${{ secrets.SF_USERNAME }} \
-          --wait 10
-      continue-on-error: true
+        sfdx project deploy start --manifest package.xml --targetusername my-org --checkonly --wait 10
+        continue-on-error: true
 
     - name: Run Apex Tests
       run: |
