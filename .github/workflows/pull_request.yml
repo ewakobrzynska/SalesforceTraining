@@ -1,31 +1,31 @@
 name: Pull Request Validation
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install the npm and SFDX CLI
+    - name: Install npm and SFDX CLI
       run: |
           npm install
           npm install sfdx-cli --global
-      
+
+    - name: Generate authFile.json
+      run: |
+        sf org display --target-org DevOrg --verbose --json > authFile.json
+
     - name: Authenticate with Salesforce
       run: |
-        sfdx force:auth:jwt:grant \
-          --clientid ${{ secrets.CLIENT_ID }} \
-          --jwtkeyfile assets/server.key \
-          --username ${{ secrets.SF_USERNAME }} \
-          --instanceurl https://login.salesforce.com
-          
+        sfdx auth:sfdxurl:store --sfdxurlfile authFile.json --setdefaultusername
+
     - name: Validate Build
       run: |
           sfdx force:source:deploy --checkonly \
