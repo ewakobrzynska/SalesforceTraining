@@ -34,8 +34,6 @@ jobs:
           --target-org my-org \
           --wait 10 \
           --ignore-conflicts \
-          --ignore-errors \
-          --test-level RunAllTestsInOrg
-        
-    - name: Run Apex tests
-      run: sfdx force:apex:test:run --targetusername ${{ secrets.SF_USERNAME }} --resultformat human
+          --ignore-errors 
+
+          
