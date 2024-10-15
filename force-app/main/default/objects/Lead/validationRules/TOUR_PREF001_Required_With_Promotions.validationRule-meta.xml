@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TOUR_PREF001_Required_With_Promotions</fullName>
+    <active>true</active>
+    <description>Tour Preferences must be filled out when Seasonal Promotions is checked.</description>
+    <errorConditionFormula>NOT($Setup.Admin_Validation_Settings__c.Is_Admin_Validation_Excluded__c) &amp;&amp;
+(AND(
+ Seasonal_promotions__c  = TRUE,
+ LEN(Tour_Preferences__c) = 0 
+))</errorConditionFormula>
+    <errorDisplayField>Tour_Preferences__c</errorDisplayField>
+    <errorMessage>Please provide Tour Preferences when Seasonal Promotions is checked.</errorMessage>
+</ValidationRule>
