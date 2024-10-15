@@ -1,0 +1,52 @@
+name: Pull Request Validation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install npm and SFDX CLI
+      run: |
+          npm install
+          npm install sfdx-cli --global
+          
+    - name: Install Salesforce CLI
+      run: |
+        npm install sfdx-cli
+        node_modules/sfdx-cli/bin/run --version
+        node_modules/sfdx-cli/bin/run plugins --core
+
+    - name: Generate authFile.json
+      run: |
+        sf org display --target-org DevOrg --verbose --json > authFile.json
+
+    - name: Authenticate with Salesforce
+      run: |
+        sfdx auth:sfdxurl:store --sfdxurlfile authFile.json --setdefaultusername
+
+    - name: Validate Build
+      run: |
+          sfdx force:source:deploy --checkonly \
+          --targetusername ${{ secrets.SF_USERNAME }} \
+          --wait 10
+      continue-on-error: true
+
+    - name: Run Apex Tests
+      run: |
+        sfdx force:apex:test:run \
+          --targetusername ${{ secrets.SF_USERNAME }} \
+          --wait 10 \
+          --resultformat human
+      continue-on-error: true
+        
+    - name: Set Build Flag on Failure
+      if: failure()
+      run: echo "Validation failed, setting flag"

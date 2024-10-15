@@ -1,0 +1,33 @@
+name: Deploy on Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install the npm and SFDX CLI
+      run: |
+          npm install
+          npm install sfdx-cli --global
+      
+    - name: Authenticate with Salesforce
+      run: |
+        sfdx force:auth:jwt:grant \
+          --clientid ${{ secrets.CLIENT_ID }} \
+          --jwtkeyfile assets/server.key \
+          --username ${{ secrets.SF_USERNAME }} \
+          --instanceurl https://login.salesforce.com
+          
+    - name: Full deploy to production
+      run: sfdx force:source:deploy -u ${{ secrets.SF_USERNAME }} -p force-app/main/default
+
+    - name: Run Apex tests
+      run: sfdx force:apex:test:run --targetusername ${{ secrets.SF_USERNAME }} --resultformat human
