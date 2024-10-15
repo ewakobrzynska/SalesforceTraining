@@ -30,7 +30,7 @@ jobs:
     - name: Validate Build
       run: |
         sfdx project deploy start --manifest package.xml --target-org my-org --wait 10 --dry-run
-        continue-on-error: true
+      continue-on-error: true
 
     - name: Run Apex Tests
       run: |
