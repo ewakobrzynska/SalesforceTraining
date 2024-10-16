@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tour_Preferences__c</fullName>
+    <inlineHelpText>This field will record detailed information about the travel agent&apos;s preferences for the tours sold, for example: &apos;Highest interest in holiday offers in Europe&apos; or &apos;Specialising in tours for seniors’.</inlineHelpText>
+    <label>Tour Preferences</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

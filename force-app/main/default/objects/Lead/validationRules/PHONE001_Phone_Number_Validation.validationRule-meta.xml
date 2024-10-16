@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PHONE001_Phone_Number_Validation</fullName>
+    <active>true</active>
+    <description>The phone number must start with a country code in the format +xx. Additionally, ensure that a phone number is provided.</description>
+    <errorConditionFormula>NOT($Setup.Admin_Validation_Settings__c.Is_Admin_Validation_Excluded__c) &amp;&amp;
+(OR(
+  ISBLANK(Phone),
+  NOT(REGEX(Phone, &quot;\\+\\d{2}.*&quot;))
+))</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Phone number must start with a country code in the format +xx. Please provide a phone number.</errorMessage>
+</ValidationRule>

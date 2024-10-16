@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Agency_Type__c</fullName>
+    <inlineHelpText>Allows segmentation based on type of business.</inlineHelpText>
+    <label>Travel Agency Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Stationary office</fullName>
+                <default>false</default>
+                <label>Stationary office</label>
+            </value>
+            <value>
+                <fullName>Online office</fullName>
+                <default>false</default>
+                <label>Online office</label>
+            </value>
+            <value>
+                <fullName>Luxury office</fullName>
+                <default>false</default>
+                <label>Luxury office</label>
+            </value>
+            <value>
+                <fullName>Tour operator</fullName>
+                <default>false</default>
+                <label>Tour operator</label>
+            </value>
+            <value>
+                <fullName>Exotic travel specialist</fullName>
+                <default>false</default>
+                <label>Exotic travel specialist</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
