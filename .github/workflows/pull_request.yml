@@ -29,13 +29,14 @@ jobs:
 
     - name: Validate Build
       run: |
-        sfdx project deploy start --manifest package.xml --target-org my-org --wait 10 --dry-run
+        sf project deploy validate --manifest package.xml --target-org my-org --test-level RunAllTestsInOrg --wait 30 --dry-run
+#        sfdx project deploy start --manifest package.xml --target-org my-org --wait 10 --dry-run
       continue-on-error: true
 
-    - name: Run Apex Tests
-      run: |
-        sfdx force:apex:test:run --target-org my-org --result-format human --synchronous
-      continue-on-error: true
+   # - name: Run Apex Tests
+  #    run: |
+   #     sfdx force:apex:test:run --target-org my-org --result-format human --synchronous
+  #    continue-on-error: true
         
     - name: Set Build Flag on Failure
       if: failure()
