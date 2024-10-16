@@ -34,7 +34,5 @@ jobs:
           --target-org my-org \
           --wait 10
 
-    - name: Clean Up
-      run: rm -rf test-results || true
 
           
