@@ -33,6 +33,3 @@ jobs:
           --manifest package.xml \
           --target-org my-org \
           --wait 10
-
-
-          
