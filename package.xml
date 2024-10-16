@@ -7,16 +7,8 @@
         <members>Contract</members>
         <members>Product2</members> 
         <members>Pricebook2</members> 
-        <members>Quote__c</members>
         <members>Order</members>
-        <members>Lead</members>
-        <members>Lead.ANNUALREV001_Required</members> 
-        <members>Lead.INDUSTRY001_Required</members>
-        <members>Lead.NUMEMP001_Required</members> 
-        <members>Lead.PHONE001_Phone_Number_Validation</members> 
-        <members>Lead.TOUR_PREF001_Required_With_Promotions</members> 
         <name>CustomObject</name>
-        <name>ValidationRule</name> 
     </types>
     <version>61.0</version> 
 </Package>
