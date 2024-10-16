@@ -7,6 +7,7 @@
         <members>Product2</members>
         <members>Pricebook2</members>
         <members>Order</members>
+        <members>Quote</members>
         <name>CustomObject</name>
     </types>
     <version>61.0</version> 
