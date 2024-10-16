@@ -29,7 +29,7 @@ jobs:
 
     - name: Validate Build
       run: |
-        sf project deploy validate --manifest package.xml --target-org my-org --test-level RunAllTestsInOrg --wait 30 --dry-run
+        sf project deploy validate --manifest package.xml --target-org my-org --test-level RunAllTestsInOrg --wait 10
 #        sfdx project deploy start --manifest package.xml --target-org my-org --wait 10 --dry-run
       continue-on-error: true
 
