@@ -24,7 +24,7 @@ jobs:
     - name: Salesforce Org Login via SFDX Auth URL
       uses: svierk/sfdx-login@main
       with:
-        sfdx-url: ${{ secrets.SFDX_AUTH_URL_EMP }}
+        sfdx-url: ${{ secrets.SFDX_AUTH_URL }}
         alias: my-org
           
     - name: Full Deploy to Production
