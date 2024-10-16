@@ -7,7 +7,7 @@
         <members>Contract</members>
         <members>Product2</members> 
         <members>Pricebook2</members> 
-        <members>Quote</members>
+        <members>Quote__c</members>
         <members>Order</members>
         <members>Lead</members>
         <name>CustomObject</name>
