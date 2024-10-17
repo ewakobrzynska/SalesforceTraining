@@ -29,6 +29,7 @@
         <members>MyProfilePage</members>
         <members>SiteLogin</members>
         <members>SiteRegister</members>
+        <members>SiteRegisterConfirm</members>
         <name>ApexPage</name>
     </types>
     <version>61.0</version> 
