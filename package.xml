@@ -17,11 +17,6 @@
         <name>StaticResource</name>
     </types>
     <types>
-        <members>OrderPDFController</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>OrderPDF</members>
         <members>ThankYouPage</members>
         <members>Globetrotter_WebToLead_Form</members>
         <name>ApexPage</name>
