@@ -24,9 +24,6 @@
         <members>OrgInfoComponent</members>
         <name>ApexComponent</name>
     </types>
-    <types>
-        <members>OrgInfo</members>
-        <name>LightningComponentBundle</name>
-    </types>
+
     <version>61.0</version> 
 </Package>
