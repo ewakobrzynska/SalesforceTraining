@@ -25,9 +25,10 @@
         <members>*</members>
         <name>CustomLabel</name>
     </types>
-
-
-
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
 
     <version>61.0</version> 
 </Package>
