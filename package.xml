@@ -25,6 +25,10 @@
     </types>
     <types>
         <members>ForgotPasswordConfirm</members>
+        <members>ChangePassword</members>
+        <members>MyProfilePage</members>
+        <members>SiteLogin</members>
+        <members>SiteRegister</members>
         <name>ApexPage</name>
     </types>
     <version>61.0</version> 
