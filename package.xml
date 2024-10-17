@@ -32,5 +32,11 @@
         <members>SiteRegisterConfirm</members>
         <name>ApexPage</name>
     </types>
+    <types>
+        <members>SiteFooter</members>
+        <members>SitePoweredBy</members>
+        <members>SiteLogin</members>
+        <name>Component</name>
+    </types>
     <version>61.0</version> 
 </Package>
