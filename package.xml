@@ -8,13 +8,12 @@
         <members>Product2</members>
         <members>Pricebook2</members>
         <members>Order</members>
-        <name>CustomObject</name>
-        
         <members>SiteLoginControllerTest</members>
         <members>ChangePasswordControllerTest</members>
         <members>SiteRegisterControllerTest</members>
         <members>ForgotPasswordControllerTest</members>
         <members>MyProfilePageControllerTest</members>
+        <name>CustomObject</name>
         <name>ApexClass</name>
     </types>
     <version>61.0</version> 
