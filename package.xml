@@ -20,5 +20,9 @@
         <members>*</members>
         <name>CustomLabel</name>
     </types>
+    <types>
+        <members>OrgInfoComponent</members>
+        <name>Component</name>
+    </types>
     <version>61.0</version> 
 </Package>
