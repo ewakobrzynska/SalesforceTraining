@@ -12,6 +12,20 @@
         <members>Quote</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>StaticResources</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResources</name>
+    </types>
+    <types>
+        <members>OrderPDF</members>
+        <members>ThankYouPage</members>
+        <members>Globetrotter_WebToLead_Form</members>
+        <name>VisualforcePages</name>
+    </types>
     
     <version>61.0</version> 
 </Package>
