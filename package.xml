@@ -17,18 +17,8 @@
         <name>StaticResource</name>
     </types>
     <types>
-        <members>ThankYouPage</members>
-        <members>Globetrotter_WebToLead_Form</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
         <members>*</members>
         <name>CustomLabel</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>Flow</name>
-    </types>
-
     <version>61.0</version> 
 </Package>
