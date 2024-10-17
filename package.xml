@@ -11,6 +11,11 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>ChangePasswordController</members>
+        <members>ForgotPasswordController</members>
+        <members>MyProfilePageController</members>
+        <members>SiteLoginController</members>
+        <members>SiteRegisterController</members>
         <members>SiteLoginControllerTest</members>
         <members>ChangePasswordControllerTest</members>
         <members>SiteRegisterControllerTest</members>
