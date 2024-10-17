@@ -25,6 +25,7 @@
         <members>OrderPDF</members>
         <members>ThankYouPage</members>
         <members>Globetrotter_WebToLead_Form</members>
+        <members>ForgotPassword</members>
         <name>ApexPage</name>
     </types>
     <types>
