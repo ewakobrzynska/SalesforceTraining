@@ -20,6 +20,14 @@
         <members>*</members>
         <name>CustomLabel</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>Aura</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
 
 
     <version>61.0</version> 
