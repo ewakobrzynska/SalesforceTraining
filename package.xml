@@ -28,11 +28,11 @@
     </types>
     <types>
         <members>*</members>
-        <name>CustomLabels</name>
+        <name>CustomLabel</name>
     </types>
     <types>
         <members>*</members>
-        <name>CustomSites</name>
+        <name>CustomSite</name>
     </types>
     
     <version>61.0</version> 
