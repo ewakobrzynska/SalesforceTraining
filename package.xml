@@ -14,11 +14,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>StaticResources</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResources</name>
+        <name>StaticResource</name>
     </types>
     <types>
         <members>OrderPDF</members>
