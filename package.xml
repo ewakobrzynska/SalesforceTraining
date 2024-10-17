@@ -20,7 +20,7 @@
         <members>OrderPDF</members>
         <members>ThankYouPage</members>
         <members>Globetrotter_WebToLead_Form</members>
-        <name>VisualforcePages</name>
+        <name>VisualforcePage</name>
     </types>
     
     <version>61.0</version> 
