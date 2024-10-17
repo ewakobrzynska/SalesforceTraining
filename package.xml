@@ -21,7 +21,7 @@
         <name>CustomLabel</name>
     </types>
     <types>
-        <members>OrgInfoComponent</members>
+        <members>OrgInfo</members>
         <name>ApexComponent</name>
     </types>
 
