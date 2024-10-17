@@ -15,6 +15,7 @@
     <types>
         <members>OrderPDFController</members>
         <members>SiteLoginController</members>
+        <members>ForgotPasswordController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -26,6 +27,7 @@
         <members>ThankYouPage</members>
         <members>Globetrotter_WebToLead_Form</members>
         <members>ForgotPassword</members>
+        <members>SiteRegister</members>
         <name>ApexPage</name>
     </types>
     <types>
