@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowGuestPaymentsApi>true</allowGuestPaymentsApi>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardPortalPages>true</allowStandardPortalPages>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>Unauthorized</authorizationRequiredPage>
+    <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
+    <browserXssProtection>true</browserXssProtection>
+    <cachePublicVisualforcePagesInProxyServers>true</cachePublicVisualforcePagesInProxyServers>
+    <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
+    <contentSniffingProtection>false</contentSniffingProtection>
+    <enableAuraRequests>true</enableAuraRequests>
+    <fileNotFoundPage>FileNotFound</fileNotFoundPage>
+    <genericErrorPage>Exception</genericErrorPage>
+    <inMaintenancePage>InMaintenance</inMaintenancePage>
+    <inactiveIndexPage>Globetrotter_WebToLead_Form</inactiveIndexPage>
+    <indexPage>Globetrotter_WebToLead_Form</indexPage>
+    <masterLabel>Globetrotter Public Site</masterLabel>
+    <redirectToCustomDomain>true</redirectToCustomDomain>
+    <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
+    <siteAdmin>ewa.kobrzynska@britenet.eu</siteAdmin>
+    <siteGuestRecordDefaultOwner>ewa.kobrzynska@britenet.eu</siteGuestRecordDefaultOwner>
+    <siteTemplate>UnderConstruction</siteTemplate>
+    <siteType>Visualforce</siteType>
+    <urlPathPrefix>webtolead</urlPathPrefix>
+</CustomSite>

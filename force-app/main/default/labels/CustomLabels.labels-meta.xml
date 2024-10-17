@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address</shortDescription>
+        <value>12 Example St.</value>
+    </labels>
+    <labels>
+        <fullName>Email_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email_Address</shortDescription>
+        <value>example@example.com</value>
+    </labels>
+    <labels>
+        <fullName>Globetrotter_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Globetrotter_Header</shortDescription>
+        <value>GLOBETROTTER</value>
+    </labels>
+    <labels>
+        <fullName>Globetrotter_Subheader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Globetrotter_Subheader</shortDescription>
+        <value>YOUR TOUR SUPPLIER</value>
+    </labels>
+    <labels>
+        <fullName>Header_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Header_Text</shortDescription>
+        <value>What services we can support you with?</value>
+    </labels>
+    <labels>
+        <fullName>Office_Hours</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Office_Hours</shortDescription>
+        <value>09:00 - 18:00</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Phone_Number</shortDescription>
+        <value>+12 345 678 910</value>
+    </labels>
+    <labels>
+        <fullName>Sign</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sign</shortDescription>
+        <value>You are about to sign the Order Details for Order Number: {!Order.OrderNumber}. 
+                Please sign below to confirm that you agree to the terms and conditions associated with this order. 
+                Once signed, your signature will be saved as part of the order record.</value>
+    </labels>
+    <labels>
+        <fullName>Subheader_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Subheader_Text1</shortDescription>
+        <value>Feel free to contact us any time. We will get back to you as soon as we can!</value>
+    </labels>
+    <labels>
+        <fullName>Thank_You_Message_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Thank You Message Header</shortDescription>
+        <value>Thank you for contacting us!</value>
+    </labels>
+    <labels>
+        <fullName>Thank_You_Message_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Thank You Message Text</shortDescription>
+        <value>We will get back to you as soon as possible.</value>
+    </labels>
+</CustomLabels>
