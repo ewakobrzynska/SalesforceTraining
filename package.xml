@@ -23,5 +23,9 @@
         <members>MyProfilePageControllerTest</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>ForgotPasswordConfirm</members>
+        <name>ApexPage</name>
+    </types>
     <version>61.0</version> 
 </Package>
