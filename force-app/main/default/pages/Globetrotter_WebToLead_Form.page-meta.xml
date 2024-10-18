@@ -5,9 +5,9 @@
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>Globetrotter_WebToLead_Form</label>
     <packageVersions>
-        <majorNumber>3</majorNumber>
-        <minorNumber>149</minorNumber>
-        <namespace>ccrz</namespace>
+        <majorNumber>1</majorNumber>
+        <minorNumber>23</minorNumber>
+        <namespace>sf_chttr_apps</namespace>
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>

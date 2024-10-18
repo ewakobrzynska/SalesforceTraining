@@ -1,0 +1,44 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader" controller="AddProductController" >
+    <aura:attribute name="products" type="List" />
+    <aura:attribute name="selectedProducts" type="List" default="[]" />
+    <aura:attribute name="opportunityId" type="Id" />
+    <aura:attribute name="visitedCountries" type="String" />
+    <aura:attribute name="showSummary" type="Boolean" default="true" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="summaryColumns" type="List" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:tabset>
+        <lightning:tab label="Products">
+            <div class="slds-p-around_medium">
+                <lightning:input type="text" label="Filter by Country" value="{!v.visitedCountries}" placeholder="Enter countries..."/>
+                <lightning:button label="Filter" onclick="{!c.filterProducts}"/>                    
+                <lightning:datatable
+                    keyField="Id"
+                    data="{!v.products}"
+                    columns="{!v.columns}"
+                    hideCheckboxColumn="false"
+                    onrowselection="{!c.handleRowSelection}">
+                </lightning:datatable>
+            </div>
+        </lightning:tab>
+
+        <lightning:tab label="Summary">
+            <div class="slds-p-around_medium">
+                <aura:if isTrue="{!empty(v.selectedProducts)}">
+                    <p>No products selected.</p>
+                </aura:if>
+                <aura:if isTrue="{!not(empty(v.selectedProducts))}">
+                    <lightning:datatable
+                        keyField="Id"
+                        data="{!v.selectedProducts}"
+                        columns="{!v.summaryColumns}"
+                    	hideCheckboxColumn="true">
+                    </lightning:datatable>
+                    <lightning:button label="Close As Won" variant="brand" onclick="{!c.closeAsWon}"/>
+                </aura:if>
+            </div>
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INDUSTRY001_Required</fullName>
+    <active>true</active>
+    <description>Prevents saving the record if &apos;Industry&apos; is not provided.</description>
+    <errorConditionFormula>NOT($Setup.Admin_Validation_Settings__c.Is_Admin_Validation_Excluded__c) &amp;&amp;
+ISPICKVAL(Industry, &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>Industry</errorDisplayField>
+    <errorMessage>Please provide &apos;Industry&apos;.</errorMessage>
+</ValidationRule>
