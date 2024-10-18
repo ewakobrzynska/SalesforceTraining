@@ -13,7 +13,7 @@
         <lightning:tab label="Products">
             <div class="slds-p-around_medium">
                 <div class="slds-grid slds-grid_align-spread">
-                    <div class="slds-col slds-size_100-of-12">
+                    <div class="slds-col slds-size_10-of-12">
                         <lightning:input type="text" label="Filter by Country" value="{!v.visitedCountries}" placeholder="You can enter multiple countries separated by a semicolon..."/>
                     </div>
                     <div class="slds-col slds-size_2-of-12">
@@ -25,7 +25,8 @@
                     data="{!v.products}"
                     columns="{!v.columns}"
                     hideCheckboxColumn="false"
-                    onrowselection="{!c.handleRowSelection}">
+                    onrowselection="{!c.handleRowSelection}"
+                    oncellchange="{!c.handleQuantityChange}">
                 </lightning:datatable>
             </div>
         </lightning:tab>

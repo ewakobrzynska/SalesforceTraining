@@ -8,7 +8,12 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 var products = response.getReturnValue();
-                //console.log('Fetched Products:', products);
+                products.forEach(function(product) {
+                    if (!product.quantity) {
+                        product.quantity = 1;  
+                    }
+                });
+                console.log('Fetched Products:', products);
                 component.set("v.products", products);
             } else if (state === "ERROR") {
                 console.error('Error fetching products: ', response.getError());
