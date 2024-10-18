@@ -12,8 +12,14 @@
     <lightning:tabset>
         <lightning:tab label="Products">
             <div class="slds-p-around_medium">
-                <lightning:input type="text" label="Filter by Country" value="{!v.visitedCountries}" placeholder="Enter countries..."/>
-                <lightning:button label="Filter" onclick="{!c.filterProducts}"/>                    
+                <div class="slds-grid slds-grid_align-spread">
+                    <div class="slds-col slds-size_100-of-12">
+                        <lightning:input type="text" label="Filter by Country" value="{!v.visitedCountries}" placeholder="You can enter multiple countries separated by a semicolon..."/>
+                    </div>
+                    <div class="slds-col slds-size_2-of-12">
+                        <lightning:button label="Filter" onclick="{!c.filterProducts}" variant="brand"/>
+                    </div>
+                </div>                 
                 <lightning:datatable
                     keyField="Id"
                     data="{!v.products}"
